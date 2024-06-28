@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ok0b3yydpdi"]
+
+[ext_resource type="Script" path="res://src/class/Detectors&Boxes/plot_detector.gd" id="1_iax01"]
+
+[node name="PlotDetector" type="Area2D"]
+script = ExtResource("1_iax01")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

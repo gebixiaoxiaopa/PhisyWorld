@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3r38a7gva7fh"]
+
+[ext_resource type="Texture2D" uid="uid://dqx65bmifw3u2" path="res://assets/textures/gui/line-dark.png" id="1_0ryms"]
+[ext_resource type="Script" path="res://src/class/gui/virtual_joy_stick.gd" id="1_xtc7d"]
+[ext_resource type="Script" path="res://src/class/gui/knob.gd" id="3_fkx5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pfd"]
+atlas = ExtResource("1_0ryms")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o6lp"]
+atlas = ExtResource("1_0ryms")
+region = Rect2(160, 304, 96, 96)
+
+[node name="VirtualJoyStick" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtc7d")
+
+[node name="Stick" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = -88.0
+offset_right = 144.0
+offset_bottom = -88.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Stick"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+pivot_offset = Vector2(80, 80)
+texture = SubResource("AtlasTexture_o3pfd")
+
+[node name="knob" type="TouchScreenButton" parent="Stick"]
+position = Vector2(-48, -48)
+texture_normal = SubResource("AtlasTexture_3o6lp")
+script = ExtResource("3_fkx5o")
+
+[connection signal="pressed" from="Stick/knob" to="." method="_on_knob_pressed"]
+[connection signal="pressed" from="Stick/knob" to="Stick/knob" method="_on_pressed"]
+[connection signal="released" from="Stick/knob" to="Stick/knob" method="_on_released"]

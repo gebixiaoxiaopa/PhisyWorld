@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfke4ca2hl4w2"]
+
+[ext_resource type="Texture2D" uid="uid://cy4f0gxy8hxec" path="res://assets/textures/gui/buttonRound_beige.png" id="1_4258j"]
+[ext_resource type="Script" path="res://src/class/gui/conbat_ui.gd" id="1_jfbpr"]
+[ext_resource type="Texture2D" uid="uid://02gy85rwwxq5" path="res://assets/textures/gui/buttonRound_brown.png" id="2_nu3vf"]
+[ext_resource type="Texture2D" uid="uid://c1u5gcmc4wnhk" path="res://assets/textures/gui/properties.png" id="3_8li48"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlrgg"]
+atlas = ExtResource("3_8li48")
+region = Rect2(0, 0, 139, 136)
+
+[node name="ConbatUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jfbpr")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(767, 530)
+scale = Vector2(2.18482, 2.18482)
+texture_normal = ExtResource("1_4258j")
+texture_pressed = ExtResource("2_nu3vf")
+action = "skill_first"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -13.0
+offset_right = 127.5
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = SubResource("AtlasTexture_jlrgg")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(981, 418)
+scale = Vector2(3.35625, 3.35625)
+texture_normal = ExtResource("1_4258j")
+texture_pressed = ExtResource("2_nu3vf")
+action = "normal_atack"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5498
+offset_top = -12.6444
+offset_right = 127.45
+offset_bottom = 123.356
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = SubResource("AtlasTexture_jlrgg")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(561, 508)
+scale = Vector2(3.35625, 3.35625)
+texture_normal = ExtResource("1_4258j")
+texture_pressed = ExtResource("2_nu3vf")
+action = "sprint"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5498
+offset_top = -12.6444
+offset_right = 127.45
+offset_bottom = 123.356
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = SubResource("AtlasTexture_jlrgg")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(828, 382)
+scale = Vector2(2.52768, 2.52768)
+texture_normal = ExtResource("1_4258j")
+texture_pressed = ExtResource("2_nu3vf")
+action = "skill_second"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5498
+offset_top = -12.6444
+offset_right = 127.45
+offset_bottom = 123.356
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = SubResource("AtlasTexture_jlrgg")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

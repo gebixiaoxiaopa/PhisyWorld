@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpbfxys5kibx0"]
+
+[ext_resource type="Script" path="res://State.gd" id="1_qmet7"]
+[ext_resource type="Texture2D" uid="uid://dgcfdmd7dnf7h" path="res://assets/textures/gui/healthbar.png" id="2_kyk8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nop4o"]
+atlas = ExtResource("2_kyk8t")
+region = Rect2(184, 0, 456, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6yuf"]
+texture = SubResource("AtlasTexture_nop4o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_804pc"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_g3onf"]
+ProgressBar/styles/background = SubResource("StyleBoxTexture_j6yuf")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_804pc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od0gf"]
+atlas = ExtResource("2_kyk8t")
+region = Rect2(0, 0, 172, 198)
+
+[node name="State" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qmet7")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -392.0
+offset_top = -376.0
+offset_right = -392.0
+offset_bottom = -376.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = 40.0
+offset_right = -120.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 80.0
+offset_right = 592.0
+offset_bottom = 128.0
+theme = SubResource("Theme_g3onf")
+
+[node name="Panel" type="Panel" parent="Panel/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 63.9999
+offset_top = 31.9999
+offset_right = 64.0
+offset_bottom = 31.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.74, 0.74)
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Panel/Panel"]
+layout_mode = 0
+offset_left = 43.2434
+offset_top = -10.8106
+offset_right = 215.243
+offset_bottom = 187.189
+texture = SubResource("AtlasTexture_od0gf")

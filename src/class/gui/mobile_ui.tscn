@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmvpqw5ngocua"]
+
+[ext_resource type="Script" path="res://addons/virtual_joystick/scripts/virtual_joystick.gd" id="1_5xuh5"]
+[ext_resource type="Texture2D" uid="uid://dkjx54jrc147c" path="res://assets/textures/gui/lineDark02.png" id="2_gd8pj"]
+[ext_resource type="Texture2D" uid="uid://de3mhpofncg2d" path="res://assets/textures/gui/lineDark46.png" id="3_u6kn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyjq6"]
+atlas = ExtResource("3_u6kn8")
+margin = Rect2(-16, -16, 0.46, 0)
+
+[node name="MobileUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VirtualJoystick" type="Node2D" parent="."]
+position = Vector2(192, 512)
+script = ExtResource("1_5xuh5")
+border = ExtResource("2_gd8pj")
+stick = SubResource("AtlasTexture_xyjq6")

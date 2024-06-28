@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bto8m5jfhcgfa"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_847oe"]
+[ext_resource type="Texture2D" uid="uid://df14l5w3stfvc" path="res://icon.svg" id="2_y2nbp"]
+[ext_resource type="PackedScene" uid="uid://drg2rld3xxoc6" path="res://src/class/player/player_component.tscn" id="3_yg6kn"]
+[ext_resource type="Script" path="res://src/class/stats/stats.gd" id="4_api41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4h4o"]
+size = Vector2(128, 128)
+
+[node name="Test" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_847oe")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_y2nbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b4h4o")
+
+[node name="PlayerComponent" parent="." instance=ExtResource("3_yg6kn")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("4_api41")
+MaxHealthEntropie = 2000
+
+[connection signal="NormalAtack" from="PlayerComponent" to="." method="_on_player_component_normal_atack"]
+[connection signal="SkillFirstCast" from="PlayerComponent" to="." method="_on_player_component_skill_first_cast"]
+[connection signal="SkillSecondCast" from="PlayerComponent" to="." method="_on_player_component_skill_second_cast"]

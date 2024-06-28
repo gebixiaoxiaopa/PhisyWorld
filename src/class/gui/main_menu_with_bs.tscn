@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyxf0ax07n17b"]
+
+[ext_resource type="Script" path="res://src/class/gui/main_menu.gd" id="1_3pkq0"]
+[ext_resource type="PackedScene" uid="uid://dutbnn863soda" path="res://src/class/gui/background.tscn" id="3_i56ba"]
+[ext_resource type="PackedScene" uid="uid://2kgopxd3wlfa" path="res://src/class/gui/splash_sceen.tscn" id="3_rxckc"]
+
+[node name="MainMenuWithBs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3pkq0")
+
+[node name="background" parent="." instance=ExtResource("3_i56ba")]
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -136.0
+offset_right = 192.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.439216)
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -12.5
+offset_right = 80.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.18, 1.18)
+text = "点击任意位置开始游戏"
+
+[node name="SplashSceen" parent="." instance=ExtResource("3_rxckc")]
+layout_mode = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="animation_finished" from="SplashSceen/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="SplashSceen"]
