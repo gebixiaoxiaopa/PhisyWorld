@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdm660wq8crkx"]
+
+[sub_resource type="GDScript" id="GDScript_rpbvq"]
+script/source = "class_name CollectingBox
+extends Area2D
+signal collecting_obj_entered(obj:PlayerBox)
+
+func _init():
+	collecting_obj_entered.connect(_on_area_entered)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+
+
+func _on_area_entered(player_box:PlayerBox):
+	collecting_obj_entered.emit(player_box)
+	player_box.obj_entered.emit(self)
+	print(\"print\")
+"
+
+[node name="CollectingBox" type="Area2D"]
+script = SubResource("GDScript_rpbvq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dby2vionghytx"]
+
+[ext_resource type="Script" path="res://src/class/enemies/slime_body.gd" id="1_i4g8u"]
+
+[node name="SlimeBody" type="CharacterBody2D"]
+script = ExtResource("1_i4g8u")

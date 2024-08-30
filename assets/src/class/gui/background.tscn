@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dutbnn863soda"]
+
+[ext_resource type="Script" path="res://background.gd" id="1_raljs"]
+[ext_resource type="Texture2D" uid="uid://b0wgip4dhpwdx" path="res://assets/textures/gui/background.png" id="2_igs11"]
+[ext_resource type="Texture2D" uid="uid://d1gjrdalps6jp" path="res://assets/textures/gui/far_star.png" id="3_rdf37"]
+[ext_resource type="Texture2D" uid="uid://dj6d810phudh6" path="res://assets/textures/gui/close_star.png" id="4_6p3wv"]
+[ext_resource type="Texture2D" uid="uid://tvxs8ngcpt7o" path="res://assets/textures/gui/space_craft_图层 1.png" id="5_csnjf"]
+
+[sub_resource type="Animation" id="Animation_646yh"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_q3n17"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxLayer4/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(168, 0), Vector2(168, -60), Vector2(168, 60), Vector2(168, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lib5r"]
+_data = {
+"RESET": SubResource("Animation_646yh"),
+"new_animation": SubResource("Animation_q3n17")
+}
+
+[node name="background" type="ParallaxBackground"]
+script = ExtResource("1_raljs")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 794.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_igs11")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2"]
+self_modulate = Color(0.329412, 0.329412, 0.329412, 1)
+offset_left = 1149.0
+offset_right = 1943.0
+offset_bottom = 1151.0
+rotation = 1.5708
+texture = ExtResource("3_rdf37")
+stretch_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+offset_right = 1152.0
+offset_bottom = 794.0
+texture = ExtResource("4_6p3wv")
+stretch_mode = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4"]
+offset_left = 168.0
+offset_right = 962.0
+offset_bottom = 794.0
+texture = ExtResource("5_csnjf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lib5r")
+}

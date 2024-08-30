@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3r38a7gva7fh"]
+
+[ext_resource type="Script" path="res://src/class/gui/virtual_joy_stick.gd" id="1_xtc7d"]
+[ext_resource type="Texture2D" uid="uid://bk6y2l5x4i1db" path="res://assets/textures/gui/UI.png" id="2_lh16i"]
+[ext_resource type="Script" path="res://src/class/gui/Knob.gd" id="3_3u3xj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40yba"]
+atlas = ExtResource("2_lh16i")
+region = Rect2(75, 0, 132, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy00b"]
+atlas = ExtResource("2_lh16i")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3caaq"]
+radius = 65.5
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_xtc7d")
+
+[node name="Ring" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_40yba")
+
+[node name="Stick" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_jy00b")
+script = ExtResource("3_3u3xj")
+
+[node name="Button" type="TouchScreenButton" parent="."]
+shape = SubResource("CircleShape2D_3caaq")
+
+[connection signal="pressed" from="Button" to="Stick" method="_on_button_pressed"]
+[connection signal="released" from="Button" to="Stick" method="_on_button_released"]

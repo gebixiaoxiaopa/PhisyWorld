@@ -1,0 +1,157 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfke4ca2hl4w2"]
+
+[ext_resource type="Script" path="res://src/class/gui/conbat_ui.gd" id="1_jfbpr"]
+[ext_resource type="Texture2D" uid="uid://bk6y2l5x4i1db" path="res://assets/textures/gui/UI.png" id="2_mrvs0"]
+[ext_resource type="Texture2D" uid="uid://d1qgbshp43tlj" path="res://assets/textures/gui/element_icon_of_strong_nuclear_force.png" id="3_wg106"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txebt"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(213, 0, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45nhk"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(291, 0, 58, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfhat"]
+radius = 27.45
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lij1o"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(213, 0, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grh01"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(291, 0, 58, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wybdf"]
+radius = 28.07
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlytw"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(213, 0, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3fs7"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(291, 0, 58, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1724q"]
+radius = 28.07
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p74w"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(213, 0, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhdlb"]
+atlas = ExtResource("2_mrvs0")
+region = Rect2(291, 0, 58, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so21o"]
+radius = 28.6
+
+[node name="ConbatUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 141.0
+offset_top = 110.0
+offset_right = 181.0
+offset_bottom = 150.0
+script = ExtResource("1_jfbpr")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(656, 371)
+scale = Vector2(1.48307, 1.48307)
+texture_normal = SubResource("AtlasTexture_txebt")
+texture_pressed = SubResource("AtlasTexture_45nhk")
+shape = SubResource("CircleShape2D_qfhat")
+action = "skill_second"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.1073
+offset_top = -10.1919
+offset_right = 127.893
+offset_bottom = 128.808
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_wg106")
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(842, 358)
+scale = Vector2(2.00537, 2.00537)
+texture_normal = SubResource("AtlasTexture_lij1o")
+texture_pressed = SubResource("AtlasTexture_grh01")
+shape = SubResource("CircleShape2D_wybdf")
+action = "normal_atack"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5168
+offset_top = -10.9209
+offset_right = 127.483
+offset_bottom = 125.08
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_wg106")
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(568, 247)
+scale = Vector2(1.95274, 1.95274)
+texture_normal = SubResource("AtlasTexture_jlytw")
+texture_pressed = SubResource("AtlasTexture_v3fs7")
+shape = SubResource("CircleShape2D_1724q")
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5168
+offset_top = -10.325
+offset_right = 127.483
+offset_bottom = 125.675
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_wg106")
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(750, 261)
+scale = Vector2(1.54522, 1.54522)
+texture_normal = SubResource("AtlasTexture_7p74w")
+texture_pressed = SubResource("AtlasTexture_xhdlb")
+shape = SubResource("CircleShape2D_so21o")
+action = "skill_first"
+
+[node name="TextureRect" type="TextureRect" parent="TouchScreenButton3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0927
+offset_top = -10.6971
+offset_right = 127.907
+offset_bottom = 125.303
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_wg106")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
