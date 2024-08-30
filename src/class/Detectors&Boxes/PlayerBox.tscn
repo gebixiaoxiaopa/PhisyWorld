@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://lx81ppoq422n"]
+
+[sub_resource type="GDScript" id="GDScript_r5vac"]
+script/source = "class_name PlayerBox
+extends Area2D
+signal obj_entered(obj:CollectingBox)
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+"
+
+[node name="PlayerBox" type="Area2D"]
+script = SubResource("GDScript_r5vac")

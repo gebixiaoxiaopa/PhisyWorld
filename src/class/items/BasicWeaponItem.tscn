@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4t6utvx2bt4c"]
+
+[ext_resource type="Script" path="res://src/class/items/BasicWeaponItem.gd" id="1_acbik"]
+
+[node name="BasicWeaponItem" type="Node2D"]
+script = ExtResource("1_acbik")

@@ -58,6 +58,12 @@ text = "点击任意位置开始游戏"
 [node name="SplashSceen" parent="." instance=ExtResource("3_rxckc")]
 layout_mode = 1
 
+[node name="Label3" parent="SplashSceen/Panel" index="2"]
+offset_left = -496.0
+offset_top = -180.0
+offset_right = 488.0
+offset_bottom = 140.0
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="animation_finished" from="SplashSceen/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

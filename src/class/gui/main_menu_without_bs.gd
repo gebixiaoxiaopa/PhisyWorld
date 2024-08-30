@@ -17,10 +17,8 @@ func _process(delta):
 
 
 func _on_enter():
-	await (get_tree().create_timer(0.5,1).timeout)
-	$AnimationPlayer.play("enter")
+	LoadManager.load_scene("res://src/class/scenes/main_scene.tscn")
 
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name =="enter":
-		get_tree().change_scene_to_file("res://src/class/scenes/main_scene.tscn")
+
+
 	

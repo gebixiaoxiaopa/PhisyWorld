@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1iq7u8vt1i41"]
+
+[ext_resource type="Script" path="res://src/class/auto_loads/ReactionManager.gd" id="1_33nom"]
+
+[node name="ReactionManager" type="Node"]
+script = ExtResource("1_33nom")
+PE = ["s", "m", null, null, null]

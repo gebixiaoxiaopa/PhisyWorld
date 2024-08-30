@@ -14,19 +14,18 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	_on_skill_key_pressed()
-func _on_skill_key_pressed():
 
-	if Input.is_action_just_pressed("normal_atack"):
+
+
+	
+func _unhandled_input(event):	
+	if event.is_action_pressed("normal_atack"):
 		NormalAtack.emit()
-	if Input.is_action_just_pressed("skill_first"):
+	if event.is_action_pressed("skill_first"):
 		SkillFirstCast.emit(properties[property_index])
-	if Input.is_action_just_pressed("skill_second"):
+	if event.is_action_pressed("skill_second"):
 		if current_charge==max_charge:
 			SkillSecondCast.emit(properties[property_index])
-	
-		
 		
 	
 

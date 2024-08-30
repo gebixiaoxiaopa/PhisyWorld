@@ -12,22 +12,29 @@ config_version=5
 
 config/name="PhisyWorld"
 run/main_scene="res://src/class/gui/main_menu_with_bs.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
-boot_splash/minimum_display_time=2
+
+[autoload]
+
+LoadManager="*res://src/class/auto_loads/load_manager.gd"
+Client="*res://src/class/auto_loads/client.gd"
+TagManager="*res://src/class/auto_loads/TagManager.gd"
+ObjectMakingManager="*res://src/class/auto_loads/object_making_manager.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://assets/textures/gui/mouse.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/joystick/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
+enabled=PackedStringArray("res://addons/joystick/plugin.cfg", "res://addons/softbody2d/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
 [input]
 
@@ -60,7 +67,7 @@ move_down={
 }
 normal_atack={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(161, 15),"global_position":Vector2(165, 58),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(382, 22),"global_position":Vector2(386, 63),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 skill_second={
@@ -93,6 +100,18 @@ sprint={
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="PlayerHurtbox"
+2d_physics/layer_5="EnemyHurtbox"
+2d_physics/layer_6="PlayerBox"
+2d_physics/layer_7="PlotBox"
+2d_physics/layer_8="CollectBox"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"

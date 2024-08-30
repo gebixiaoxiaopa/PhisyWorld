@@ -3,9 +3,9 @@ extends Node
 @export var LeastHealthEntropie:int = 0
 @export var MaxHealthEntropie : int
 		
-@export var CurrentHealthEntropie :int =LeastHealthEntropie :
-	set(v):
-		v=clampi(v,0,MaxHealthEntropie)
-		if CurrentHealthEntropie==v:
-			return
-		CurrentHealthEntropie=v
+var CurrentHealthEntropie :int =LeastHealthEntropie
+func _process(delta):
+	if CurrentHealthEntropie>MaxHealthEntropie:
+		CurrentHealthEntropie=MaxHealthEntropie
+	if CurrentHealthEntropie <0:
+		CurrentHealthEntropie=0
